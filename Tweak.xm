@@ -1,4 +1,5 @@
-/* This tweak is hooking Apple's clock app to add a button to delete all alarm clocks (besides the "bed time" clock)
+/* v1:This tweak is hooking Apple's clock app to add a button to delete all alarm clocks (besides the "bed time" clock)
+ * v2: This update will include the "bed time clock" and also add preference pane
  * The button will appear only when in edit mode
  * Created by: 0xkuj
 */
