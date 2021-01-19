@@ -6,7 +6,7 @@
 /* load all specifiers from plist file */
 - (NSMutableArray*)specifiers {
 	if (!_specifiers) {
-		_specifiers = [[self loadSpecifiersFromPlistName:@"Root" target:self] retain];
+		_specifiers = [self loadSpecifiersFromPlistName:@"Root" target:self];
 		[self applyModificationsToSpecifiers:(NSMutableArray*)_specifiers];
 	}
 
@@ -83,11 +83,15 @@
 }
 
 -(void)openTwitter {
-	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.twitter.com/omrkujman"]];
+	UIApplication *application = [UIApplication sharedApplication];
+	NSURL *URL = [NSURL URLWithString:@"https://www.twitter.com/omrkujman"];
+	[application openURL:URL options:@{} completionHandler:^(BOOL success) {return;}];
 }
 
 -(void)donationLink {
-	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.paypal.me/0xkuj"]];
+	UIApplication *application = [UIApplication sharedApplication];
+	NSURL *URL = [NSURL URLWithString:@"https://www.paypal.me/0xkuj"];
+	[application openURL:URL options:@{} completionHandler:^(BOOL success) {return;}];
 }
 
 @end

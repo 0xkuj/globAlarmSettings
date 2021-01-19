@@ -10,7 +10,6 @@
 @interface GAPRootListController : PSListController {
     NSArray* _allSpecifiers;
 }
-- (void)apply;
 - (void)applyModificationsToSpecifiers:(NSMutableArray*)specifiers;
 - (void)removeDisabledGroups:(NSMutableArray*)specifiers;
 - (void)openTwitter;

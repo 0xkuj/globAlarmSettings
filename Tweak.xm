@@ -1,5 +1,4 @@
-/* v1:This tweak is hooking Apple's clock app to add a button to delete all alarm clocks (besides the "bed time" clock)
- * v2: This update will include the "bed time clock" and also add preference pane
+/* This tweak is hooking Apple's clock app to add a button to delete all alarm clocks (besides the "bed time" clock)
  * The button will appear only when in edit mode
  * Created by: 0xkuj
 */
@@ -77,8 +76,7 @@ enum actionTypes
 /* Overriding This function - its being called when we are in edit mode, she holds a value editing so we will know when its in edit mode and when its done */
 -(void)setEditing:(BOOL)editing animated:(BOOL)animated
 { 
-    %orig;
-
+    %orig(editing,animated);
     preferences= [[NSDictionary alloc] initWithContentsOfFile:preferencePlist];
 	NSNumber *isTweakEnabled = [preferences objectForKey:@"isTweakEnabled"];
 	if(!isTweakEnabled) isTweakEnabled = @YES;
@@ -200,7 +198,6 @@ enum actionTypes
 
 %new
 -(void)showActionSheet {
-
 	NSString *dynamicTitleToggle;
 	NSString *dynamicTitleSnooze;
 
